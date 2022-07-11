@@ -1,0 +1,20 @@
+{% include 'backend/includes/main_menu.html' %}
+
+<table>
+  <tr>
+    <th>Имя</th>
+    <th>Производитель</th>
+    <th>Редактировать</th>
+  </tr>
+  {% for type in equipmenttype_list %}
+  <tr>
+    <td>{{ type.name }}</td>
+    <td>{{ type.description }}</td>
+    <td>
+      <a href="/equipment-type/{{ type.pk }}/"><button>Редактировать</button></a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<a href="/equipment-type/new"><button>Создать новое</button></a>

@@ -1,0 +1,29 @@
+{% include 'backend/includes/main_menu.html' %}
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Имя</th>
+    <th>Производитель</th>
+    <th>Описание</th>
+    <th>Тип</th>
+    <th>Серийный номер</th>
+    <th>Редактировать</th>
+  </tr>
+  {% for eq in equipment_list %}
+  <tr>
+    <td>{{ eq.pk }}</td>
+    <td>{{ eq.name }}</td>
+    <td>{{ eq.manufacturer }}</td>
+    <td>{{ eq.description }}</td>
+    <td>{{ eq.equipment_type }}</td>
+    <td>{{ eq.serial }}</td>
+    <td>
+      <a href="/equipment/{{ eq.pk }}/"><button>Редактировать</button></a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<a href="/equipment/new"><button>Создать новое</button></a>
+
